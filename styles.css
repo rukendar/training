@@ -1,0 +1,141 @@
+/* CSS Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    color: #4a5568;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.add-habit-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+#habitInput {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    min-width: 200px;
+}
+
+#addHabitBtn {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+
+#addHabitBtn:hover {
+    transform: scale(1.05);
+}
+
+.habits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.habit-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f7fafc;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    transition: background 0.2s;
+}
+
+.habit-item:hover {
+    background: #edf2f7;
+}
+
+.habit-name {
+    font-weight: bold;
+    flex: 1;
+}
+
+.habit-streak {
+    color: #38a169;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.complete-btn {
+    padding: 8px 12px;
+    background: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.complete-btn.completed {
+    background: #a0aec0;
+    cursor: not-allowed;
+}
+
+.delete-btn {
+    padding: 8px 12px;
+    background: #e53e3e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.streak-display {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background: #f0fff4;
+    border-radius: 8px;
+    border: 2px solid #9ae6b4;
+}
+
+.empty-state {
+    text-align: center;
+    color: #a0aec0;
+    font-style: italic;
+    margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+    .add-habit-form {
+        flex-direction: column;
+    }
+
+    .habit-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

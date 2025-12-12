@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Habit Tracker</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 20px;">Build better habits with xAI's help! Track your daily progress and see your streaks grow.</p>
+        
+        <form class="add-habit-form" id="habitForm">
+            <input type="text" id="habitInput" placeholder="Enter a new habit (e.g., Read 10 pages)" required>
+            <button type="submit" id="addHabitBtn">Add Habit</button>
+        </form>
+
+        <ul class="habits-list" id="habitsList"></ul>
+
+        <div class="streak-display" id="streakDisplay" style="display: none;">
+            <h2>Your Longest Streak</h2>
+            <p id="longestStreak">0 days</p>
+        </div>
+
+        <div class="empty-state" id="emptyState">
+            <p>No habits yet. Add one to get started!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
