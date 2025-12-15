@@ -5,26 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habit Tracker</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>🚀 Habit Tracker</h1>
-        <p style="text-align: center; color: #666; margin-bottom: 20px;">Build better habits with xAI's help! Track your daily progress and see your streaks grow.</p>
-        
-        <form class="add-habit-form" id="habitForm">
-            <input type="text" id="habitInput" placeholder="Enter a new habit (e.g., Read 10 pages)" required>
-            <button type="submit" id="addHabitBtn">Add Habit</button>
-        </form>
-
-        <ul class="habits-list" id="habitsList"></ul>
-
-        <div class="streak-display" id="streakDisplay" style="display: none;">
-            <h2>Your Longest Streak</h2>
-            <p id="longestStreak">0 days</p>
+        <!-- Theme Toggle -->
+        <div class="theme-toggle">
+            <button id="themeBtn" class="theme-btn"><i class="fas fa-moon"></i></button>
         </div>
 
+        <h1 class="main-title"><i class="fas fa-rocket"></i> Habit Tracker</h1>
+        <p class="subtitle">Build better habits with xAI's help! Track your daily progress and see your streaks grow.</p>
+        
+        <!-- Add Habit Form -->
+        <form class="add-habit-form" id="habitForm">
+            <div class="input-group">
+                <input type="text" id="habitInput" placeholder="Enter a new habit (e.g., Read 10 pages)" required>
+                <button type="submit" id="addHabitBtn" class="btn-primary"><i class="fas fa-plus"></i> Add Habit</button>
+            </div>
+        </form>
+
+        <!-- Stats Overview -->
+        <div class="stats-overview">
+            <div class="stat-card">
+                <h3>Total Habits</h3>
+                <p id="totalHabits">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Today's Completions</h3>
+                <p id="todayCompletions">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Longest Streak</h3>
+                <p id="longestStreak">0 days</p>
+            </div>
+        </div>
+
+        <!-- Habits List -->
+        <ul class="habits-list" id="habitsList"></ul>
+
+        <!-- Calendar View -->
+        <div class="calendar-section" id="calendarSection">
+            <h2><i class="fas fa-calendar-alt"></i> Calendar View</h2>
+            <div class="calendar" id="calendar"></div>
+        </div>
+
+        <!-- Empty State -->
         <div class="empty-state" id="emptyState">
+            <i class="fas fa-seedling" style="font-size: 4rem; color: #ccc;"></i>
             <p>No habits yet. Add one to get started!</p>
+        </div>
+
+        <!-- Progress Chart (using Canvas) -->
+        <div class="chart-section" id="chartSection" style="display: none;">
+            <h2><i class="fas fa-chart-line"></i> Weekly Progress</h2>
+            <canvas id="progressChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <!-- Modal for Edit -->
+    <div class="modal" id="habitModal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Habit</h2>
+            <input type="text" id="editHabitInput" placeholder="Edit habit name">
+            <div class="modal-actions">
+                <button id="saveEditBtn" class="btn-primary">Save</button>
+                <button id="cancelEditBtn" class="btn-secondary">Cancel</button>
+            </div>
         </div>
     </div>
 
